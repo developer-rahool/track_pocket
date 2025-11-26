@@ -98,7 +98,7 @@ class _StaticsScreenState extends State<StaticsScreen> {
                           ),
                         )
                       : Padding(
-                          padding: const EdgeInsets.all(16.0),
+                          padding: const EdgeInsets.only(top: 10, bottom: 10),
                           child: BarChart(
                             BarChartData(
                               alignment: BarChartAlignment.spaceAround,

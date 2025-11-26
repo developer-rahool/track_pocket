@@ -108,7 +108,7 @@ class _AddTransactionScreenState extends State<AddTransactionScreen> {
                     title: "Amount",
                     controller: _amountController,
                     keyboardType: TextInputType.number,
-                    inputFormatters: [allowNumberOnly],
+                    inputFormatters: [allowNumberAndDecimal],
                     validator: (v) {
                       if (v == null || v.isEmpty) return "Enter amount";
                       final num = double.tryParse(v);
@@ -136,7 +136,10 @@ class _AddTransactionScreenState extends State<AddTransactionScreen> {
                             Icons.calendar_month,
                             color: chrome900,
                           ),
-                          label: const Text("Pick Date"),
+                          label: const Text(
+                            "Pick Date",
+                            style: TextStyle(color: chrome900),
+                          ),
                         ),
                       ],
                     ),

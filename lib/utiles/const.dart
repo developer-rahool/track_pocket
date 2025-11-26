@@ -39,5 +39,8 @@ nextPage(BuildContext context, Widget page) {
   Navigator.push(context, MaterialPageRoute(builder: (context) => page));
 }
 
+final FilteringTextInputFormatter allowNumberAndDecimal =
+    FilteringTextInputFormatter.allow(RegExp(r'^\d*\.?\d*$'));
+
 final FilteringTextInputFormatter allowNumberOnly =
     FilteringTextInputFormatter.allow(RegExp(r'^[0-9]*$'));

@@ -35,13 +35,12 @@ class _TabBarScreenState extends State<TabBarScreen> {
           body: _tabList[provider.selectIndex],
           bottomNavigationBar: BottomNavigationBar(
             elevation: 2,
-            type: BottomNavigationBarType.fixed,
-            //selectedItemColor: mainColor,
+            type: BottomNavigationBarType.shifting,
             selectedLabelStyle: const TextStyle(fontWeight: FontWeight.bold),
             unselectedLabelStyle: const TextStyle(fontWeight: FontWeight.w600),
-            //unselectedItemColor: chrome600,
             currentIndex: provider.selectIndex,
-            //backgroundColor: const Color.fromARGB(255, 228, 248, 238),
+            showSelectedLabels: true,
+            selectedFontSize: 12,
             items: [
               BottomNavigationBarItem(
                 icon: const Icon(Icons.home),
