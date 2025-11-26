@@ -1,4 +1,4 @@
-package com.example.trackpocket
+package com.trackpocket.app
 
 import io.flutter.embedding.android.FlutterActivity
 
