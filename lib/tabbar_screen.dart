@@ -34,12 +34,11 @@ class _TabBarScreenState extends State<TabBarScreen> {
         return Scaffold(
           body: _tabList[provider.selectIndex],
           bottomNavigationBar: BottomNavigationBar(
-            elevation: 2,
-            type: BottomNavigationBarType.shifting,
+            // elevation: 2,
+            type: BottomNavigationBarType.fixed,
             selectedLabelStyle: const TextStyle(fontWeight: FontWeight.bold),
             unselectedLabelStyle: const TextStyle(fontWeight: FontWeight.w600),
             currentIndex: provider.selectIndex,
-            showSelectedLabels: true,
             selectedFontSize: 12,
             items: [
               BottomNavigationBarItem(
