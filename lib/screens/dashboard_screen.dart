@@ -38,14 +38,14 @@ class _DashboardScreenState extends State<DashboardScreen> {
           builder: (context, tProvider, child) {
             List<TransactionModel> txList = tProvider.filteredTransactions;
             return Padding(
-              padding: const EdgeInsets.only(left: 30.0, right: 30),
+              padding: EdgeInsets.symmetric(horizontal: bodyPadding),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
+                  SizedBox(height: 30),
                   Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      SizedBox(height: 50),
                       Padding(
                         padding: const EdgeInsets.only(left: 3),
                         child: Text(
@@ -59,17 +59,20 @@ class _DashboardScreenState extends State<DashboardScreen> {
                           ),
                         ),
                       ),
-                      SizedBox(height: 15),
-                      //Balance Card
+                      SizedBox(height: 10),
                       Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
+                          //Balance Card
                           SizedBox(
-                            width: screenWidth(context) * 0.41,
+                            width: screenWidth(context) * 0.465,
                             child: Card(
                               color: subMainColor,
                               child: Padding(
-                                padding: const EdgeInsets.all(10.0),
+                                padding: const EdgeInsets.symmetric(
+                                  horizontal: 15.0,
+                                  vertical: 10.0,
+                                ),
                                 child: Column(
                                   crossAxisAlignment: CrossAxisAlignment.start,
                                   children: [
@@ -103,9 +106,9 @@ class _DashboardScreenState extends State<DashboardScreen> {
                                                     .isNegative
                                               ? tProvider.remainingBalance
                                                     .abs()
-                                                    .toString()
+                                                    .toStringAsFixed(2)
                                               : tProvider.remainingBalance
-                                                    .toStringAsFixed(1),
+                                                    .toStringAsFixed(2),
                                           style: TextStyle(
                                             fontSize: 18,
                                             color: Colors.white,
@@ -121,11 +124,14 @@ class _DashboardScreenState extends State<DashboardScreen> {
                           ),
                           //Expenses Card
                           SizedBox(
-                            width: screenWidth(context) * 0.41,
+                            width: screenWidth(context) * 0.465,
                             child: Card(
                               color: Colors.deepOrangeAccent,
                               child: Padding(
-                                padding: const EdgeInsets.all(10.0),
+                                padding: const EdgeInsets.symmetric(
+                                  horizontal: 15.0,
+                                  vertical: 10.0,
+                                ),
                                 child: Column(
                                   crossAxisAlignment: CrossAxisAlignment.start,
                                   children: [
@@ -153,7 +159,7 @@ class _DashboardScreenState extends State<DashboardScreen> {
                                           tProvider.totalExpense == 0.0
                                               ? '0'
                                               : tProvider.totalExpense
-                                                    .toStringAsFixed(1),
+                                                    .toStringAsFixed(2),
                                           style: TextStyle(
                                             fontSize: 18,
                                             color: whiteColor,
@@ -169,14 +175,17 @@ class _DashboardScreenState extends State<DashboardScreen> {
                           ),
                         ],
                       ),
-                      SizedBox(height: 6),
+                      SizedBox(height: 5),
                       //Total Budget Card
                       SizedBox(
                         width: screenWidth(context),
                         child: Card(
                           color: Colors.green,
                           child: Padding(
-                            padding: const EdgeInsets.all(10.0),
+                            padding: const EdgeInsets.symmetric(
+                              horizontal: 15.0,
+                              vertical: 10.0,
+                            ),
                             child: Column(
                               crossAxisAlignment: CrossAxisAlignment.start,
                               children: [
@@ -203,7 +212,7 @@ class _DashboardScreenState extends State<DashboardScreen> {
                                       tProvider.totalDeposite == 0.0
                                           ? '0'
                                           : tProvider.totalDeposite
-                                                .toStringAsFixed(1),
+                                                .toStringAsFixed(2),
                                       style: TextStyle(
                                         fontSize: 20,
                                         color: Colors.white,
@@ -224,7 +233,7 @@ class _DashboardScreenState extends State<DashboardScreen> {
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        SizedBox(height: 10),
+                        SizedBox(height: 5),
                         Padding(
                           padding: const EdgeInsets.only(left: 4),
                           child: Text(

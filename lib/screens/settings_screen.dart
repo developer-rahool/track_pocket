@@ -34,15 +34,29 @@ class _SettingsScreenState extends State<SettingsScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 30),
+        padding: EdgeInsets.symmetric(horizontal: bodyPadding + 5),
         child: Consumer<BudgetProvider>(
           builder: (context, provider, child) {
             return Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                SizedBox(height: 60),
+                //Filters
+                SizedBox(height: 30),
+                Padding(
+                  padding: const EdgeInsets.only(left: 3),
+                  child: Text(
+                    'Settings',
+                    style: TextStyle(
+                      fontSize: 25,
+                      color: themeState.isDarkMode ? whiteColor : chrome700,
+                      fontWeight: FontWeight.bold,
+                    ),
+                  ),
+                ),
+                SizedBox(height: 10),
                 SwitchListTile(
                   activeThumbColor: Theme.of(context).primaryColor,
-                  title: const Text("Dark Mode"),
+                  title: const Text("Set Theme"),
                   value: themeState.isDarkMode,
                   onChanged: (_) => themeState.toggleTheme(),
                 ),
@@ -205,7 +219,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
                     ),
                     icon: const Icon(Icons.delete, color: Colors.red, size: 24),
                     label: const Text(
-                      "Clear Data",
+                      "Reset Data",
                       style: TextStyle(color: Colors.red, fontSize: 16),
                     ),
                   ),

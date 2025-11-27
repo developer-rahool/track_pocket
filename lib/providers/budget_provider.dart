@@ -112,7 +112,7 @@ class BudgetProvider with ChangeNotifier {
 
     await flutterLocalNotificationsPlugin.show(
       1,
-      '$value Exceeded!',
+      '\$$value Exceeded!',
       'You have exceeded your $mode limit!',
       details,
     );

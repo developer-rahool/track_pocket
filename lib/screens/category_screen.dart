@@ -55,13 +55,28 @@ class _CategoryScreenState extends State<CategoryScreen> {
         List<TransactionModel> txList = provider.filteredIncomeTransactions;
         return Scaffold(
           body: Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 20),
+            padding: EdgeInsets.symmetric(horizontal: bodyPadding),
             child: provider.isLoading
                 ? CustomLoader()
                 : Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       //Filters
-                      SizedBox(height: 60),
+                      SizedBox(height: 30),
+                      Padding(
+                        padding: const EdgeInsets.only(left: 3),
+                        child: Text(
+                          'Categories',
+                          style: TextStyle(
+                            fontSize: 25,
+                            color: themeState.isDarkMode
+                                ? whiteColor
+                                : chrome700,
+                            fontWeight: FontWeight.bold,
+                          ),
+                        ),
+                      ),
+                      SizedBox(height: 10),
                       Padding(
                         padding: const EdgeInsets.symmetric(horizontal: 5),
                         child: AppDropDownField(

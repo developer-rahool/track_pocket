@@ -19,6 +19,8 @@ const Color chrome700 = Color.fromRGBO(53, 53, 56, 1);
 const Color chrome800 = Color(0xff212124);
 const Color chrome900 = Color(0xff111111);
 
+double bodyPadding = 10;
+
 screenWidth(BuildContext context) {
   return MediaQuery.of(context).size.width;
 }

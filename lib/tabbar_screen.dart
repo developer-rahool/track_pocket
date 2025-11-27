@@ -47,11 +47,11 @@ class _TabBarScreenState extends State<TabBarScreen> {
               ),
               BottomNavigationBarItem(
                 icon: const Icon(Icons.edit_document),
-                label: 'List',
+                label: 'Cats',
               ),
               BottomNavigationBarItem(
                 icon: const Icon(Icons.bar_chart_rounded),
-                label: 'Statics',
+                label: 'Stats',
               ),
               BottomNavigationBarItem(
                 icon: const Icon(Icons.settings),

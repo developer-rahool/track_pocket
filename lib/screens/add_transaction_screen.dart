@@ -90,18 +90,18 @@ class _AddTransactionScreenState extends State<AddTransactionScreen> {
                         provider.categoryDropDownListen(value),
                   ),
 
-                  const SizedBox(height: 20),
+                  const SizedBox(height: 25),
 
                   // Title
                   AppTextFormField(
                     title: "Name",
-                    maxLength: 20,
+                    maxLength: 25,
                     controller: _titleController,
                     validator: (v) =>
                         v == null || v.isEmpty ? "Enter name" : null,
                   ),
 
-                  const SizedBox(height: 20),
+                  const SizedBox(height: 7),
 
                   // Amount
                   AppTextFormField(
@@ -150,7 +150,10 @@ class _AddTransactionScreenState extends State<AddTransactionScreen> {
                   // Income / Expense Switch
                   SwitchListTile(
                     value: provider.isIncome,
-                    title: const Text("Is Income?"),
+                    title: Text(
+                      "Is Income?",
+                      style: TextStyle(color: chrome900, fontSize: 14),
+                    ),
                     onChanged: provider.switchListTileFun,
                     activeThumbColor: mainColor,
                   ),

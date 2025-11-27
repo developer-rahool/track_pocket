@@ -62,10 +62,24 @@ class _StaticsScreenState extends State<StaticsScreen> {
           });
 
           return Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 24),
+            padding: EdgeInsets.symmetric(horizontal: bodyPadding + 5),
             child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                const SizedBox(height: 60),
+                //Filters
+                SizedBox(height: 30),
+                Padding(
+                  padding: const EdgeInsets.only(left: 3),
+                  child: Text(
+                    'Statistics',
+                    style: TextStyle(
+                      fontSize: 25,
+                      color: themeState.isDarkMode ? whiteColor : chrome700,
+                      fontWeight: FontWeight.bold,
+                    ),
+                  ),
+                ),
+                SizedBox(height: 10),
 
                 /// FILTER DROPDOWN
                 AppDropDownField(
